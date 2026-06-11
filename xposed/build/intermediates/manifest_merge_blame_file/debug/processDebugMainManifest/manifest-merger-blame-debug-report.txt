@@ -1,0 +1,39 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.Maythayus1Corp.nfccardemulatorrootfree.xposed"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="36" />
+10
+11    <application
+11-->C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:3:5-7:19
+12        android:debuggable="true"
+13        android:exported="false"
+13-->C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:3:45-69
+14        android:extractNativeLibs="false"
+15        android:label="NFC Xposed" >
+15-->C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:3:18-44
+16        <meta-data
+16-->C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:4:9-71
+17            android:name="xposedmodule"
+17-->C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:4:20-47
+18            android:value="true" />
+18-->C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:4:48-68
+19        <meta-data
+19-->C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:5:9-73
+20            android:name="xposedminversion"
+20-->C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:5:20-51
+21            android:value="54" />
+21-->C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:5:52-70
+22        <meta-data
+22-->C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:6:9-92
+23            android:name="xposeddescription"
+23-->C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:6:20-52
+24            android:value="NFC diagnostic hooks" />
+24-->C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:6:53-89
+25    </application>
+26
+27</manifest>

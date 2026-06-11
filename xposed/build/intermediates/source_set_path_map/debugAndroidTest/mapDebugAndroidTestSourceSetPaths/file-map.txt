@@ -1,0 +1,4 @@
+com.Maythayus1Corp.nfccardemulatorrootfree.xposed.test.xposed-androidTest-0 C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\build\generated\res\resValues\androidTest\debug
+com.Maythayus1Corp.nfccardemulatorrootfree.xposed.test.xposed-mergeDebugAndroidTestResources-1 C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.Maythayus1Corp.nfccardemulatorrootfree.xposed.test.xposed-mergeDebugAndroidTestResources-2 C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.Maythayus1Corp.nfccardemulatorrootfree.xposed.test.xposed-debugAndroidTest-3 C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
