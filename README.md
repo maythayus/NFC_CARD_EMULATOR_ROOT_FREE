@@ -43,6 +43,8 @@ In short:
 
 - Android: Android 11+ recommended
 - NFC enabled
+- Root access (Magisk or equivalent)
+- LSPosed installed and enabled
 - PC (Windows) + **ACS ACR122U** reader (for the tool scripts)
 - Python 3
 
