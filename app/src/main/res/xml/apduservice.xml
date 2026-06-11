@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:apduServiceBanner="@mipmap/ic_launcher"
+    android:description="@string/app_name"
+    android:requireDeviceUnlock="false">
+
+    <aid-group
+        android:category="other"
+        android:description="@string/app_name">
+        <aid-filter android:name="F0010203040506" />
+        <aid-filter android:name="F04456494749" />
+        <aid-filter android:name="F0014E4F52" />
+        <aid-filter android:name="D276000085010100" />
+        <aid-filter android:name="F04E4643454D5531" />
+    </aid-group>
+</host-apdu-service>
