@@ -1,0 +1,49 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:1:1-9:12
+	package
+		INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:3:5-7:19
+INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:3:5-7:19
+	android:extractNativeLibs
+		INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml
+	android:label
+		ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:3:18-44
+	android:exported
+		ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:3:45-69
+meta-data#xposedmodule
+ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:4:9-71
+	android:value
+		ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:4:48-68
+	android:name
+		ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:4:20-47
+meta-data#xposedminversion
+ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:5:9-73
+	android:value
+		ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:5:52-70
+	android:name
+		ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:5:20-51
+meta-data#xposeddescription
+ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:6:9-92
+	android:value
+		ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:6:53-89
+	android:name
+		ADDED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml:6:20-52
+uses-sdk
+INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml
+INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\MI_K4\AndroidStudioProjects\NFCCARDEMULATORROOTFREE\xposed\src\main\AndroidManifest.xml

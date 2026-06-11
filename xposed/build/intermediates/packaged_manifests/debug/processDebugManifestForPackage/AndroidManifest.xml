@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.Maythayus1Corp.nfccardemulatorrootfree.xposed"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="26"
+        android:targetSdkVersion="36" />
+
+    <application
+        android:debuggable="true"
+        android:exported="false"
+        android:extractNativeLibs="false"
+        android:label="NFC Xposed" >
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="54" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="NFC diagnostic hooks" />
+    </application>
+
+</manifest>
