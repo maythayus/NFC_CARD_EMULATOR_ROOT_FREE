@@ -58,7 +58,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.BorderStroke
 import com.Maythayus1Corp.nfccardemulatorrootfree.ui.theme.NFCCARDEMULATORROOTFREETheme
 import java.util.UUID
-import kotlin.math.min
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -211,48 +210,8 @@ private fun HomeScreen(modifier: Modifier = Modifier) {
 
                 val bytes = cr.openInputStream(uri)?.use { it.readBytes() } ?: byteArrayOf()
                 AppLog.i("IMPORT DUMP bytes=${bytes.size}")
-                val prefix = bytes.copyOfRange(0, min(bytes.size, 4096))
 
-                fun likelyUtf16Le(data: ByteArray): Boolean {
-                    if (data.size < 4) return false
-                    var zerosOnOdd = 0
-                    var checked = 0
-                    val n = min(data.size, 512)
-                    var i = 1
-                    while (i < n) {
-                        if (data[i] == 0.toByte()) zerosOnOdd++
-                        checked++
-                        i += 2
-                    }
-                    return checked > 0 && zerosOnOdd.toFloat() / checked.toFloat() > 0.6f
-                }
-
-                fun likelyUtf16Be(data: ByteArray): Boolean {
-                    if (data.size < 4) return false
-                    var zerosOnEven = 0
-                    var checked = 0
-                    val n = min(data.size, 512)
-                    var i = 0
-                    while (i < n) {
-                        if (data[i] == 0.toByte()) zerosOnEven++
-                        checked++
-                        i += 2
-                    }
-                    return checked > 0 && zerosOnEven.toFloat() / checked.toFloat() > 0.6f
-                }
-
-                val decodedText = try {
-                    when {
-                        likelyUtf16Le(prefix) -> bytes.toString(Charsets.UTF_16LE)
-                        likelyUtf16Be(prefix) -> bytes.toString(Charsets.UTF_16BE)
-                        else -> bytes.toString(Charsets.UTF_8)
-                    }
-                } catch (_: Throwable) {
-                    ""
-                }
-
-                val text = decodedText.replace("\u0000", "")
-                val normalized = text.replace("\r\n", "\n")
+                val normalized = DumpClassifier.normalize(DumpClassifier.decodeText(bytes))
 
                 val trimmed = normalized.trim()
                 val isJsonObject = trimmed.startsWith("{")
@@ -301,40 +260,13 @@ private fun HomeScreen(modifier: Modifier = Modifier) {
                     }
                 }
 
-                val hexPreview = Hex.bytesToHex(prefix)
-                    .chunked(2)
-                    .chunked(16)
-                    .joinToString("\n") { row -> row.joinToString(" ") }
-
-                val looksLikeText = (
-                    normalized.any { it.code in 32..126 } &&
-                    normalized.count { it == '\uFFFD' } == 0
-                )
-
-                dumpPreview = if (looksLikeText) {
+                val hexPreview = DumpClassifier.hexPreview(bytes)
+                dumpPreview = if (DumpClassifier.looksLikeText(normalized)) {
                     normalized.take(1000)
                 } else {
                     "(binary file)\n$hexPreview".take(1500)
                 }
-
-                val upper = normalized.uppercase()
-                val hexUpper = hexPreview.replace(" ", "").replace("\n", "").uppercase()
-                val fileNameUpper = (dumpName ?: "").uppercase()
-                val isLikelyClassic1kRaw = (bytes.size == 1024) || fileNameUpper.endsWith(".DUMP")
-                val looksLikeApduTraceText = looksLikeText && (
-                    upper.contains("->") ||
-                        upper.contains("APDU") ||
-                        upper.contains("SELECT AID") ||
-                        upper.contains("CLA=")
-                )
-                dumpKind = when {
-                    upper.contains("\"sectors\"") && upper.contains("\"keys\"") && upper.contains("\"uid\"") -> "MIFARE Classic / VIGIK JSON"
-                    isLikelyClassic1kRaw -> "MIFARE Classic 1K (raw dump)"
-                    hexUpper.contains("484558414354") -> "HEXACT / MIFARE Classic-like"
-                    looksLikeApduTraceText -> "APDU (ISO7816)"
-                    upper.contains("SECTOR") || upper.contains("BLOCK") || upper.contains("KEY A") || upper.contains("KEY B") -> "MIFARE Classic-like"
-                    else -> "Unknown"
-                }
+                dumpKind = DumpClassifier.classifyKind(normalized, hexPreview, dumpName, bytes.size)
                 AppLog.i("Dump classified kind=${dumpKind ?: "null"} name=${dumpName ?: "null"}")
 
                 importedDumpJson = org.json.JSONObject().apply {
@@ -378,7 +310,10 @@ private fun HomeScreen(modifier: Modifier = Modifier) {
                 context.contentResolver.openOutputStream(uri)?.use { os ->
                     os.write(json.toByteArray())
                 }
-            } catch (_: Throwable) {
+                Toast.makeText(context, "Cards exported", Toast.LENGTH_SHORT).show()
+            } catch (t: Throwable) {
+                AppLog.e("Export failed: ${t.javaClass.simpleName}: ${t.message}")
+                Toast.makeText(context, "Export failed", Toast.LENGTH_SHORT).show()
             }
         }
     )
