@@ -1,3 +1,6 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -23,7 +26,7 @@ android {
             // La clé n'est jamais dans le dépôt : lue depuis keystore.properties (gitignore).
             val kp = rootProject.file("keystore.properties")
             if (kp.exists()) {
-                val p = java.util.Properties().apply { kp.inputStream().use { load(it) } }
+                val p = Properties().apply { FileInputStream(kp).use { load(it) } }
                 storeFile = rootProject.file(p.getProperty("storeFile"))
                 storePassword = p.getProperty("storePassword")
                 keyAlias = p.getProperty("keyAlias")
