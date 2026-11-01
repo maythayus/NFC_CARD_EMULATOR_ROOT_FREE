@@ -28,3 +28,10 @@ local.properties
 *log*.txt
 
 com.mod.yuanwofei.mod.apk.9.1.19.1.1/
+
+# Dumps de badges : UID et contenu des secteurs, jamais dans le depot
+vigik_badge_*.json
+vigik_hce_*.json
+vigik_compare_*.json
+hf-mf-*-dump.json
+*.dump.hex.txt
