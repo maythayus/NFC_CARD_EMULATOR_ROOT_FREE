@@ -39,6 +39,17 @@ In short:
 - If your gate/reader uses **ISO-DEP/APDU**: HCE tests are likely to work.
 - If your gate/reader uses **MIFARE Classic (Crypto‑1)**: ISO‑DEP HCE alone is not enough.
 
+### Need MIFARE Classic? Use PN532Killer V1.1
+
+For readers that expect MIFARE Classic, a phone cannot do the job on its own. I recommend the
+**[PN532Killer](https://github.com/NFC-funs/PN532Killer) V1.1**, a dedicated pocket device and an open source project (MIT):
+
+- Emulates MIFARE, NTAG and ISO 15693 cards, with EM4100 through its LF extension
+- Sniffs 14443A and 15693 reader exchanges
+- Connects over USB or BLE and works with the MTools apps
+
+Use it only with your own cards, or on systems you are authorized to test.
+
 ## Requirements
 
 - Android: Android 11+ recommended
