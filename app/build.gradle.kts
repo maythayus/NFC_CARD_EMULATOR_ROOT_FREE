@@ -9,7 +9,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.Maythayus1Corp.nfccardemulatorrootfree"
+        applicationId = "com.MaythayusCorp.nfccardemulatorrootfree"
         minSdk = 26
         targetSdk = 36
         versionCode = 2
